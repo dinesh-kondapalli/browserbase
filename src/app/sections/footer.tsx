@@ -1,29 +1,23 @@
 "use client";
 
-import ScrollReveal from "../components/ScrollReveal";
-
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__cta-section">
         <div className="footer__grid" aria-hidden="true" />
-        <ScrollReveal>
-          <p className="footer__copy">What will you build?</p>
-        </ScrollReveal>
-        <ScrollReveal delay={0.1}>
-          <div className="footer__button-container">
-            <button type="button" className="footer__demo-button">
-              <a href="https://www.browserbase.com/contact">Get a Demo</a>
-            </button>
-            <button type="button" className="footer__cta-button">
-              <a href="/sign-up">Get Started</a>
-            </button>
-          </div>
-        </ScrollReveal>
+        <p className="footer__copy">What will you build?</p>
+        <div className="footer__button-container">
+          <button type="button" className="footer__demo-button">
+            <a href="https://www.browserbase.com/contact">Get a Demo</a>
+          </button>
+          <button type="button" className="footer__cta-button">
+            <a href="/sign-up">Get Started</a>
+          </button>
+        </div>
       </div>
       <div className="footer__bottom">
         <div className="footer__container">
-          <ScrollReveal className="footer__links-container" delay={0.1}>
+          <div className="footer__links-container">
             <ul className="footer__column">
               <li>Product</li>
               <li>
@@ -98,7 +92,7 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </ScrollReveal>
+          </div>
           <div className="footer__socials-container">
             <div className="footer__privacy-container">
               <a

@@ -1,6 +1,5 @@
 "use client";
 
-import ScrollReveal from "../components/ScrollReveal";
 import Image from "next/image";
 
 const sponsors = [
@@ -17,27 +16,21 @@ const sponsors = [
 export default function SponsorsSection() {
   return (
     <section className="sponsors">
-      <ScrollReveal>
-        <p className="sponsors__title">
-          Trusted by AI-First companies worldwide
-        </p>
-      </ScrollReveal>
-      <ScrollReveal delay={0.2}>
-        <div className="sponsors__grid">
-          {sponsors.map((sponsor) => (
-            <div key={sponsor.name} className="sponsors__item">
-              <Image
-                src={sponsor.logo}
-                alt={sponsor.name}
-                width={100}
-                height={40}
-                className="sponsors__logo"
-                style={{ width: "auto", height: "auto" }}
-              />
-            </div>
-          ))}
-        </div>
-      </ScrollReveal>
+      <p className="sponsors__title">Trusted by AI-First companies worldwide</p>
+      <div className="sponsors__grid">
+        {sponsors.map((sponsor) => (
+          <div key={sponsor.name} className="sponsors__item">
+            <Image
+              src={sponsor.logo}
+              alt={sponsor.name}
+              width={100}
+              height={40}
+              className="sponsors__logo"
+              style={{ width: "auto", height: "auto" }}
+            />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

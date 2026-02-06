@@ -1,10 +1,5 @@
 "use client";
 
-import ScrollReveal, {
-  StaggerContainer,
-  StaggerItem,
-} from "../components/ScrollReveal";
-
 interface Tweet {
   id: string;
   name: string;
@@ -298,56 +293,54 @@ const tweets: Tweet[] = [
 export default function TweetWallSection() {
   return (
     <section className="tweet-wall" id="developer-love">
-      <ScrollReveal className="tweet-wall__title-wrapper" y={20}>
+      <div className="tweet-wall__title-wrapper">
         <h2 className="tweet-wall__title">Developer love</h2>
-      </ScrollReveal>
-      <StaggerContainer className="tweet-wall__columns" staggerDelay={0.03}>
+      </div>
+      <div className="tweet-wall__columns">
         {tweets.map((tweet) => (
-          <StaggerItem key={tweet.id}>
-            <article className="tweet-wall__tweet">
-              <a
-                href={tweet.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Read more on Twitter"
-                className="tweet-wall__avatar-link"
+          <article key={tweet.id} className="tweet-wall__tweet">
+            <a
+              href={tweet.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read more on Twitter"
+              className="tweet-wall__avatar-link"
+            >
+              <img
+                src={tweet.avatar}
+                alt={`${tweet.name} profile`}
+                width={48}
+                height={48}
+              />
+            </a>
+            <a
+              href={tweet.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read more on Twitter"
+              className="tweet-wall__author"
+            >
+              <span>{tweet.name}</span>
+              <span>{tweet.handle}</span>
+              <svg
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+                aria-hidden="true"
               >
-                <img
-                  src={tweet.avatar}
-                  alt={`${tweet.name} profile`}
-                  width={48}
-                  height={48}
+                <title>X logo</title>
+                <path
+                  d="M11.4393 9.31641L17.0702 2.771H15.7358L10.8466 8.45429L6.94151 2.771H2.4375L8.3427 11.3651L2.4375 18.229H3.77191L8.93511 12.2273L13.0591 18.229H17.5631L11.439 9.31641H11.4393ZM9.61165 11.4409L9.01333 10.5851L4.25271 3.77552H6.30229L10.1442 9.27105L10.7425 10.1268L15.7365 17.2702H13.6869L9.61165 11.4412V11.4409Z"
+                  fill="currentColor"
                 />
-              </a>
-              <a
-                href={tweet.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Read more on Twitter"
-                className="tweet-wall__author"
-              >
-                <span>{tweet.name}</span>
-                <span>{tweet.handle}</span>
-                <svg
-                  width="20"
-                  height="21"
-                  viewBox="0 0 20 21"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <title>X logo</title>
-                  <path
-                    d="M11.4393 9.31641L17.0702 2.771H15.7358L10.8466 8.45429L6.94151 2.771H2.4375L8.3427 11.3651L2.4375 18.229H3.77191L8.93511 12.2273L13.0591 18.229H17.5631L11.439 9.31641H11.4393ZM9.61165 11.4409L9.01333 10.5851L4.25271 3.77552H6.30229L10.1442 9.27105L10.7425 10.1268L15.7365 17.2702H13.6869L9.61165 11.4412V11.4409Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
-              <p>{tweet.content}</p>
-            </article>
-          </StaggerItem>
+              </svg>
+            </a>
+            <p>{tweet.content}</p>
+          </article>
         ))}
         <div className="tweet-wall__gradient" />
-      </StaggerContainer>
+      </div>
     </section>
   );
 }

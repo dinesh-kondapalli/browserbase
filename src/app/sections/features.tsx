@@ -3,10 +3,6 @@
 import type { CSSProperties } from "react";
 import { useState } from "react";
 import FeaturesWebgl from "./featuresWebgl";
-import ScrollReveal, {
-  StaggerContainer,
-  StaggerItem,
-} from "../components/ScrollReveal";
 
 const featureItems = [
   {
@@ -246,22 +242,22 @@ export default function FeaturesSection() {
 
   return (
     <section className="features" id="features">
-      <ScrollReveal className="features__header" y={20}>
+      <div className="features__header">
         <h2>Features</h2>
-      </ScrollReveal>
+      </div>
       <div className="features__wrapper">
-        <ScrollReveal className="features__webglContainer" delay={0.2}>
+        <div className="features__webglContainer">
           <div className="features__webgl">
             <FeaturesWebgl activeColor={activeColor} />
           </div>
-        </ScrollReveal>
-        <StaggerContainer className="features__list" staggerDelay={0.05}>
+        </div>
+        <div className="features__list">
           {featureItems.map((item, index) => {
             const isExpanded = expandedIndex === index;
             const isActive = isExpanded;
 
             return (
-              <StaggerItem key={item.id}>
+              <div key={item.id}>
                 <button
                   type="button"
                   data-id={item.id}
@@ -280,20 +276,18 @@ export default function FeaturesSection() {
                     </span>
                     <h3>{item.title}</h3>
                   </div>
-                  {isExpanded && (
-                    <div className="feature-card__body">
-                      <ul>
-                        {item.description.map((line) => (
-                          <li key={line}>{line}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                  <div className="feature-card__body">
+                    <ul>
+                      {item.description.map((line) => (
+                        <li key={line}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </button>
-              </StaggerItem>
+              </div>
             );
           })}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   );
