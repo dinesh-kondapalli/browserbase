@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 const metrics = ["No credit card required."];
 
 export default function HeroSection() {

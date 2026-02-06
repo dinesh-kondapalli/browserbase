@@ -118,6 +118,7 @@ export default function Footer() {
                 rel="noreferrer noopener"
                 aria-label="LinkedIn"
               >
+                <span className="sr-only">LinkedIn</span>
                 <svg
                   width="24"
                   height="24"
@@ -138,6 +139,7 @@ export default function Footer() {
                 rel="noreferrer noopener"
                 aria-label="X (Twitter)"
               >
+                <span className="sr-only">X (Twitter)</span>
                 <svg
                   width="24"
                   height="24"
@@ -158,6 +160,7 @@ export default function Footer() {
                 rel="noreferrer noopener"
                 aria-label="Instagram"
               >
+                <span className="sr-only">Instagram</span>
                 <svg
                   width="24"
                   height="24"
@@ -178,6 +181,7 @@ export default function Footer() {
                 rel="noreferrer noopener"
                 aria-label="YouTube"
               >
+                <span className="sr-only">YouTube</span>
                 <svg
                   width="24"
                   height="24"

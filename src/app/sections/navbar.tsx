@@ -322,7 +322,7 @@ export default function Navbar() {
                                         height={32}
                                       />
                                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img
+                                      <Image
                                         className="navbar__dropdown-icon-svg"
                                         src={item.icon}
                                         alt=""

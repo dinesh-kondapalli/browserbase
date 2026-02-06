@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 const useCases = [
@@ -117,7 +118,7 @@ export default function UseCasesSection() {
                     {useCase.title}
                   </span>
                   {index === activeTab ? (
-                    <img
+                    <Image
                       src="/Triangle.d0ca3127.png"
                       alt=""
                       width={71}
@@ -199,7 +200,7 @@ export default function UseCasesSection() {
                           />
                         </svg>
                       </div>
-                      <img
+                      <Image
                         src="/Shadow.e25b56e4.png"
                         alt=""
                         width={261}

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 interface Tweet {
   id: string;
   name: string;
@@ -306,7 +308,7 @@ export default function TweetWallSection() {
               aria-label="Read more on Twitter"
               className="tweet-wall__avatar-link"
             >
-              <img
+              <Image
                 src={tweet.avatar}
                 alt={`${tweet.name} profile`}
                 width={48}

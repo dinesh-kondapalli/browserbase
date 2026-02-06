@@ -1,6 +1,5 @@
 "use client";
 
-import { Suspense, useEffect, useMemo } from "react";
 import {
   Edges,
   Environment,
@@ -8,13 +7,14 @@ import {
   useVideoTexture,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Suspense, useEffect } from "react";
 import * as THREE from "three";
 
 interface RubiksCubeProps {
   color: string;
 }
 
-function RubiksCube({ color }: RubiksCubeProps) {
+function RubiksCube({ color: _color }: RubiksCubeProps) {
   const cubeSize = 1.6;
   const segments = 2;
   const segmentSize = cubeSize / segments;
@@ -53,6 +53,7 @@ function RubiksCube({ color }: RubiksCubeProps) {
           );
 
         cubes.push({
+          id: `cube-${x}-${y}-${z}`,
           position: [px, py, pz] as [number, number, number],
           materials,
         });
@@ -64,14 +65,14 @@ function RubiksCube({ color }: RubiksCubeProps) {
 
   return (
     <group position={[-1.5, 0.2, 0]} rotation={[0.55, 0.75, 0]}>
-      {cubes.map((cube, idx) => (
-        <mesh key={idx} position={cube.position}>
+      {cubes.map((cube) => (
+        <mesh key={cube.id} position={cube.position}>
           <boxGeometry
             args={[segmentSize - 0.01, segmentSize - 0.01, segmentSize - 0.01]}
           />
           {cube.materials.map((mat, matIdx) => (
             <primitive
-              key={matIdx}
+              key={`${cube.id}-mat-${matIdx}`}
               object={mat}
               attach={`material-${matIdx}`}
             />

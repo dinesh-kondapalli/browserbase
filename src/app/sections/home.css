@@ -522,17 +522,16 @@
   font-size: 17px;
   color: var(--foreground);
   box-shadow: 0 12px 30px rgba(16, 13, 13, 0.08);
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .hero__announcement a:hover {
   background: #111;
   color: #fff;
   border-color: #111;
-}
-
-.hero__announcement a:hover .hero__announcement-arrow {
-  color: #fff;
 }
 
 .hero__announcement-icon {
@@ -555,6 +554,10 @@
 .hero__announcement-arrow {
   font-size: 22px;
   margin-left: 6px;
+}
+
+.hero__announcement a:hover .hero__announcement-arrow {
+  color: #fff;
 }
 
 .hero__logo {
@@ -612,7 +615,9 @@
   min-width: 200px;
   font-size: 18px;
   border: 1px solid var(--accent);
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .hero__primary:hover {
@@ -627,7 +632,9 @@
   font-weight: 600;
   min-width: 200px;
   font-size: 18px;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .hero__secondary:hover {
@@ -690,10 +697,11 @@
       transparent 2px,
       rgba(255, 255, 255, 0.08) 2px,
       rgba(255, 255, 255, 0.08) 4px
-    ),
-    #1a1a1a;
+    ), #1a1a1a;
   z-index: 0;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
   transform: translate(0, 0);
   opacity: 0;
 }
