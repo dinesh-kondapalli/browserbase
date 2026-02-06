@@ -19,15 +19,18 @@ export default function SponsorsSection() {
       <p className="sponsors__title">Trusted by AI-First companies worldwide</p>
       <div className="sponsors__grid">
         {sponsors.map((sponsor) => (
-          <div key={sponsor.name} className="sponsors__item">
-            <Image
-              src={sponsor.logo}
-              alt={sponsor.name}
-              width={100}
-              height={40}
-              className="sponsors__logo"
-              style={{ width: "auto", height: "auto" }}
-            />
+          <div key={sponsor.name} className="sponsors__item-wrapper">
+            <div className="sponsors__item-shadow" />
+            <div className="sponsors__item">
+              <Image
+                src={sponsor.logo}
+                alt={sponsor.name}
+                width={100}
+                height={40}
+                className="sponsors__logo"
+                style={{ width: "auto", height: "auto" }}
+              />
+            </div>
           </div>
         ))}
       </div>

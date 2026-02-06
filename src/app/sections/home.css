@@ -522,6 +522,17 @@
   font-size: 17px;
   color: var(--foreground);
   box-shadow: 0 12px 30px rgba(16, 13, 13, 0.08);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero__announcement a:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.hero__announcement a:hover .hero__announcement-arrow {
+  color: #fff;
 }
 
 .hero__announcement-icon {
@@ -600,6 +611,13 @@
   font-weight: 600;
   min-width: 200px;
   font-size: 18px;
+  border: 1px solid var(--accent);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hero__primary:hover {
+  background: #fff;
+  color: var(--accent);
 }
 
 .hero__secondary {
@@ -609,6 +627,12 @@
   font-weight: 600;
   min-width: 200px;
   font-size: 18px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hero__secondary:hover {
+  background: #111;
+  color: #fff;
 }
 
 .hero__metrics {
@@ -646,6 +670,34 @@
   align-items: stretch;
 }
 
+.sponsors__item-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-height: 100px;
+  cursor: pointer;
+}
+
+.sponsors__item-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.08) 2px,
+      rgba(255, 255, 255, 0.08) 4px
+    ),
+    #1a1a1a;
+  z-index: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translate(0, 0);
+  opacity: 0;
+}
+
 .sponsors__item {
   display: flex;
   align-items: center;
@@ -656,15 +708,18 @@
   background: #fff;
   position: relative;
   z-index: 1;
-  transition: transform 0.2s ease-in-out;
-  min-height: 100px;
-  aspect-ratio: 16 / 9;
-  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
 }
 
-.sponsors__item:hover {
-  transform: scale(1.05);
-  z-index: 2;
+.sponsors__item-wrapper:hover .sponsors__item {
+  transform: translate(8px, -6px);
+}
+
+.sponsors__item-wrapper:hover .sponsors__item-shadow {
+  transform: translate(-4px, 4px);
+  opacity: 1;
 }
 
 .sponsors__logo {
@@ -692,9 +747,12 @@
     margin-bottom: 30px;
   }
 
+  .sponsors__item-wrapper {
+    min-height: 80px;
+  }
+
   .sponsors__item {
     padding: 20px 16px;
-    min-height: 80px;
   }
 }
 
@@ -1318,7 +1376,7 @@
 
 .tweet-wall__columns {
   position: relative;
-  columns: 382px;
+  columns: 4;
   column-gap: 24px;
   width: 100%;
   max-width: 1600px;
@@ -1329,7 +1387,7 @@
 
 @media (max-width: 1600px) {
   .tweet-wall__columns {
-    max-width: 1194px;
+    max-width: 1200px;
   }
 }
 
@@ -1339,7 +1397,7 @@
   grid-template-rows: repeat(2, auto);
   column-gap: 10px;
   row-gap: 16px;
-  width: 382px;
+  width: 100%;
   border: 1px solid var(--border);
   padding: 32px;
   background: #fff;
@@ -1360,7 +1418,7 @@
 .tweet-wall__avatar-link img {
   width: 48px;
   height: 48px;
-  border-radius: 0;
+  border-radius: 50%;
   object-fit: cover;
 }
 
@@ -1417,10 +1475,6 @@
 @media (max-width: 1200px) {
   .tweet-wall__columns {
     columns: 2;
-  }
-
-  .tweet-wall__tweet {
-    width: 100%;
   }
 }
 
