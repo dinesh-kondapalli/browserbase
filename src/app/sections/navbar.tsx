@@ -173,25 +173,34 @@ const navLinks: NavLink[] = [
     href: "/#resources",
     icon: "chevron",
     dropdown: {
+      width: 325,
       sections: [
         {
           title: "Resources",
           items: [
-            { title: "Blog", description: "Product updates", href: "/blog" },
+            {
+              title: "Blog",
+              href: "/blog",
+              iconTexture: "/icon-texture-yellow.webp",
+              iconShadowTexture: "/icon-shadow-texture.webp",
+            },
             {
               title: "Templates",
-              description: "Ready-to-use workflows",
               href: "/templates",
+              iconTexture: "/icon-texture-blue.webp",
+              iconShadowTexture: "/icon-shadow-texture.webp",
             },
             {
               title: "Customers",
-              description: "Stories from teams",
               href: "/blog?tag=Customers&page=1",
+              iconTexture: "/icon-texture-purple.webp",
+              iconShadowTexture: "/icon-shadow-texture.webp",
             },
             {
               title: "Enterprise",
-              description: "Security and compliance",
               href: "/enterprise",
+              iconTexture: "/icon-texture-green.webp",
+              iconShadowTexture: "/icon-shadow-texture.webp",
             },
           ],
         },
@@ -319,6 +328,26 @@ export default function Navbar() {
                                         alt=""
                                         width={20}
                                         height={20}
+                                      />
+                                    </span>
+                                  </span>
+                                ) : item.iconTexture &&
+                                  item.iconShadowTexture ? (
+                                  <span className="navbar__dropdown-icon navbar__dropdown-icon--empty-box">
+                                    <Image
+                                      className="navbar__dropdown-icon-shadow-texture"
+                                      src={item.iconShadowTexture}
+                                      alt=""
+                                      width={32}
+                                      height={32}
+                                    />
+                                    <span className="navbar__dropdown-icon-inner-empty">
+                                      <Image
+                                        className="navbar__dropdown-icon-texture"
+                                        src={item.iconTexture}
+                                        alt=""
+                                        width={32}
+                                        height={32}
                                       />
                                     </span>
                                   </span>
